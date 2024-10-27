@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #0a0a2e, #1a1a3a);
+    padding: 20px;
+}
+body.iron-man-theme {
+    background: linear-gradient(45deg, #7a1414, #b36b1b);
+}
+
+body.black-panther-theme {
+    background: linear-gradient(45deg, #111111, #454545);
+}
+
+body.phoenix-theme {
+    background: linear-gradient(45deg, #4a0f0f, #7a1f1f);
+}
+
+.main-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+    height: 580px;
+    perspective: 1000px;
+}
+
+.card-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(20, 20, 40, 0.8);
+    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.3);
+    color: white;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(180deg, 
+        rgba(52, 152, 219, 0.2) 0%,
+        rgba(0, 0, 0, 0) 100%);
+    z-index: -1;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.card h2 {
+    color: #3498db;
+    font-size: 24px;
+    margin-bottom: 8px;
+    text-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.card h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, transparent);
+}
+.card.iron-man {
+    background: rgba(40, 20, 20, 0.8);
+    border-color: #ffd700;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+.card.iron-man h2 {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+.card.iron-man .info-label {
+    color: #ff4444;
+}
+
+.card.iron-man .hero-stats {
+    background: rgba(255, 0, 0, 0.1);
+}
+
+.card.black-panther {
+    background: rgba(20, 20, 20, 0.8);
+    border-color: silver;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+}
+
+.card.black-panther h2 {
+    color: silver;
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+}
+
+.card.black-panther .info-label {
+    color: #c0c0c0;
+}
+
+.card.black-panther .hero-stats {
+    background: rgba(169, 169, 169, 0.1);
+}
+
+
+.card.phoenix {
+    background: rgba(40, 20, 20, 0.8);
+    border-color: #ffd700;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.3);
+}
+
+.card.phoenix h2 {
+    color: #ff4444;
+    text-shadow: 0 0 10px rgba(255, 69, 0, 0.3);
+}
+
+.card.phoenix .info-label {
+    color: #ffd700;
+}
+
+.card.phoenix .hero-stats {
+    background: rgba(255, 69, 0, 0.1);
+}
+
+.iron-man-theme button {
+    background: linear-gradient(45deg, #aa0000, #ffd700);
+}
+
+.black-panther-theme button {
+    background: linear-gradient(45deg, #222222, #666666);
+}
+
+.phoenix-theme button {
+    background: linear-gradient(45deg, #ff4444, #ffd700);
+}
+
+.card p {
+    font-size: 14px;
+    margin: 8px 0;
+    line-height: 1.4;
+    color: #ecf0f1;
+}
+
+.info-label {
+    color: #3498db;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.info-label::after {
+    content: ':';
+    color: #3498db;
+}
+
+.navigation {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+button {
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #2980b9, #3498db);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.hero-stats {
+    background: rgba(52, 152, 219, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: auto;
+}
+
+
+@media (max-width: 768px) {
+    .carousel {
+        height: 500px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card img {
+        height: 180px;
+    }
+
+    .card h2 {
+        font-size: 20px;
+    }
+
+    .card p {
+        font-size: 13px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .carousel {
+        height: 460px;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    .card img {
+        height: 160px;
+    }
+
+    .card h2 {
+        font-size: 18px;
+    }
+
+    .card p {
+        font-size: 12px;
+        margin: 6px 0;
+    }
+
+    .hero-stats {
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 320px) {
+    .carousel {
+        height: 420px;
+    }
+
+    .card img {
+        height: 140px;
+    }
+
+    .card h2 {
+        font-size: 16px;
+    }
+
+    .navigation {
+        gap: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .card:hover {
+        transform: translateZ(20px);
+        box-shadow: 0 0 30px rgba(52, 152, 219, 0.5);
+    }
+
+    .card:hover img {
+        transform: scale(1.05);
+    }
+
+    button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+        );
+        transition: 0.5s;
+    }
+
+    button:hover::before {
+        left: 100%;
+    }
+}

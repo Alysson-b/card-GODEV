@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel de Cards 3D</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="carousel">
+            <div class="card-container">
+            
+                <div class="card" style="transform: rotateY(0deg) translateZ(0)">
+                    <div class="power-indicator"></div>
+                    <img src="./assets/Stark_HC.jpg" alt="Iron Man">
+                    <h2>HOMEM DE FERRO</h2>
+                    <p>Gênio, bilionário, playboy, filantropo. Tony Stark usa sua armadura high-tech para proteger o mundo.</p>
+                    <div class="hero-stats">
+                        <p><span class="info-label">Filmes</span>Iron Man 1, 2, 3, Vingadores</p>
+                        <p><span class="info-label">Espécie</span>Humano</p>
+                        <p><span class="info-label">Altura</span>1,85m</p>
+                        <p><span class="info-label">Localidade</span>Nova York</p>
+                        <p><span class="info-label">Armas</span>Armadura Mark, Repulsores, JARVIS</p>
+                    </div>
+                </div>
+                
+                <div class="card" style="transform: rotateY(240deg) translateZ(0)">
+                    <div class="power-indicator"></div>
+                    <img src="./assets/Fênix Jean Grey Marvel Comics.png" alt="Dark Phoenix">
+                    <h2>FÊNIX NEGRA</h2>
+                    <p>Jean Grey, uma mutante Ômega, possui poderes telepáticos e telecinéticos imensuráveis.</p>
+                    <div class="hero-stats">
+                        <p><span class="info-label">Filmes</span>X-Men: Fênix Negra</p>
+                        <p><span class="info-label">Espécie</span>Mutante</p>
+                        <p><span class="info-label">Altura</span>1,75m</p>
+                        <p><span class="info-label">Localidade</span>Instituto Xavier</p>
+                        <p><span class="info-label">Armas</span>Telecinese, Telepatia, Força Fênix</p>
+                    </div>
+                </div>
+               
+                <div class="card" style="transform: rotateY(120deg) translateZ(0)">
+                    <div class="power-indicator"></div>
+                    <img src="./assets/black-panther.png" alt="Black Panther">
+                    <h2>PANTERA NEGRA</h2>
+                    <p>Rei de Wakanda e protetor do legado do Pantera Negra, T'Challa defende seu povo com honra.</p>
+                    <div class="hero-stats">
+                        <p><span class="info-label">Filmes</span>Pantera Negra, Guerra Civil</p>
+                        <p><span class="info-label">Espécie</span>Humano Aprimorado</p>
+                        <p><span class="info-label">Altura</span>1,83m</p>
+                        <p><span class="info-label">Localidade</span>Wakanda</p>
+                        <p><span class="info-label">Armas</span>Traje de Vibranium, Garras</p>
+                    </div>
+                </div>
+                
+               
+            </div>
+        </div>
+        <div class="navigation">
+            <button onclick="prevCard()">Anterior</button>
+            <button onclick="nextCard()">Próximo</button>
+        </div>
+    </div>
+   
+
+    <script src="./indes.js"></script>
+</body>
+</html>
